@@ -1,2 +1,0 @@
-# DevConnectorGUFE
-Created with CodeSandbox
