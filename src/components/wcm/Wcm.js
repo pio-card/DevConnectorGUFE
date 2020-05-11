@@ -4,33 +4,21 @@ import { connect } from "react-redux"; //RA 4.6. 1
 import PropTypes from "prop-types";
 
 //bring in components for WCM page
-//import Items from "./Items";
-//import ItemList from "./ItemList";
+import Items from "./Items";
+import DisplayCalendar from "./wcm-forms/DisplayCalendar";
 import CreateItem from "./wcm-forms/CreateItem";
-
-//test for redux lifecycle
-import Posts from "../wcm/Posts";
-import Postx from "../wcm/Postx";
-import PostForm from "./wcm-forms/PostForm";
 
 //for http library
 import axios from "axios";
 axios.defaults.baseURL = `https://gzure.sse.codesandbox.io`; //proxy in package.json not working
 
 const Wcm = () => {
-  const onSubmit = async e => {
-    e.preventDefault();
-  };
   return (
     <div className="some-page-wrapper">
       <div className="row">
         <div className="column">
           <div className="blue-column">
-            <form className="form" onSubmit={e => onSubmit(e)}>
-              <label htmlFor="calmonthyear">Calendar (month and year):</label>
-              <input type="month" id="calmonthyear" name="calmonthyear" />
-              <input type="submit" />
-            </form>
+            <DisplayCalendar />
           </div>
         </div>
         <div className="column">
@@ -41,7 +29,7 @@ const Wcm = () => {
         <div className="column">
           <div className="orange-column">
             <Fragment>
-              <Postx />
+              <Items />
             </Fragment>
           </div>
         </div>
@@ -53,7 +41,6 @@ const Wcm = () => {
         <div className="column">
           <div className="green-column">
             <CreateItem />
-            <PostForm />
           </div>
         </div>
         <div className="column">
