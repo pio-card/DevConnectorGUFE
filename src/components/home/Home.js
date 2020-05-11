@@ -1,4 +1,4 @@
-// create a new component file - Dashboard.js RA 4.8
+// create a new component file - Home.js RA 4.8
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux"; //RA 4.6. 1
@@ -7,14 +7,14 @@ import PropTypes from "prop-types";
 
 import { getCurrentProfile } from "../../actions/profile";
 
-const Dashboard = ({ getCurrentProfile, auth, profile }) => {
+const Home = ({ getCurrentProfile, auth, profile }) => {
   //React hook
   useEffect(() => {
     getCurrentProfile();
   }, []);
-  return <div>Dashboard </div>;
+  return <div>Home </div>;
 };
-Dashboard.propTypes = {
+Home.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
@@ -29,4 +29,4 @@ export default connect(
   //RA 4.7.2
   mapStateToProps, //mapStateToProps
   { getCurrentProfile } //action list
-)(Dashboard);
+)(Home);

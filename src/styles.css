@@ -299,7 +299,7 @@ button {
 }
 
 /* Navbar */
-.navbar {
+.navbarTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -310,6 +310,34 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 35;
+  float: right;
+  border-bottom: solid 1px var(--primary-color);
+  opacity: 0.9;
+  background-color: #17a2b8;
+}
+.navbarBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 70;
+  float: right;
+  border-bottom: solid 1px var(--primary-color);
+  opacity: 0.9;
+  background-color: #17a2b8;
 }
 
 .navbar ul {
@@ -486,6 +514,35 @@ button {
   color: #aaa;
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
+}
+/* layout styles*/
+.some-page-wrapper {
+  margin: 0px;
+  background-color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.blue-column {
+  background-color: blue;
+  height: 100px;
+}
+
+.green-column {
+  background-color: green;
+  height: 100px;
 }
 
 /* Mobile Styles */

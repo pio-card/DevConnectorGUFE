@@ -6,9 +6,16 @@ import PropTypes from "prop-types"; //RA 4.8.1
 
 import { logout } from "../../actions/auth";
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const NavbarTop = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
+    <ul style={{ marginLeft: "auto" }}>
+      <li>
+        <Link to="/account">
+          <i className="fas fa-user" />
+          {""}
+          <span className="hide-sm"> Account</span>
+        </Link>
+      </li>
       <li>
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt" />
@@ -18,7 +25,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
     </ul>
   );
-
   const guestLinks = (
     <ul>
       <li>
@@ -35,18 +41,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-code" /> DevConnector
-        </Link>
-      </h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
     </nav>
   );
 };
-Navbar.propTypes = {
+NavbarTop.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -59,4 +60,4 @@ export default connect(
   //RA 4.7.2
   mapStateToProps, //mapStateToProps
   { logout } //action list
-)(Navbar);
+)(NavbarTop);
